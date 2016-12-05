@@ -1,0 +1,33 @@
+{
+  "name": "reactproj",
+  "version": "1.0.0",
+  "description": "React practice Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "babel": "./node_modules/.bin/babel",
+    "start": "webpack --config ./config/mywebpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venkat-ravilla/reactproj.git"
+  },
+  "author": "Venkataramana R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venkat-ravilla/reactproj/issues"
+  },
+  "homepage": "https://github.com/venkat-ravilla/reactproj#readme",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babelify": "^7.3.0",
+    "webpack": "^1.13.3"
+  }
+}
