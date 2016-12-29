@@ -2,7 +2,6 @@
 const debug = process.env.NODE_ENV !=="production";
 const {resolve} = require("path");
 const webpack = require('webpack');
-console.log(__dirname);
 
 module.exports = {
     context: resolve(__dirname,'./src'),
@@ -29,7 +28,8 @@ module.exports = {
     },
     devServer:{
         inline:true,
-        hot:true
+        hot:true,
+        historyApiFallback:true
     },
     plugins: debug ? [new webpack.HotModuleReplacementPlugin()] : [
         new webpack.optimize.DedupePlugin(),

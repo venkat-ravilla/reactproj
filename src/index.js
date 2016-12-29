@@ -1,27 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {Router, Route, IndexRoute, hashHistory} from "react-router";
 
-class Layout extends React.Component {
-	render() {
-		return (
-			<h1> It Works </h1>
-		);
-	}
-};
+import Layout from "./pages/Layout"
+import Featured from "./pages/Featured"
+import Todos from "./pages/Todos"
+import Archives from "./pages/Archives"
+import Settings from "./pages/Settings"
 
-let formatuser=(user)=> {
-	return user.firstname+" "+user.lastname;
-};
-
-const user = {
-	firstname:"test",
-	lastname:"ravilla"
-};
-
-const element = (
-	 <h1>
-	    Hello, {formatuser(user)}!
-	  </h1>
-	);
 const app = document.getElementById("root");
-ReactDOM.render(element,app);
+ReactDOM.render(
+	<Router history={hashHistory}>
+		<Route path="/" component={Layout}>
+			<IndexRoute component={Todos}></IndexRoute>
+			<Route path="archives(/:article)" component={Archives}></Route>
+			<Route path="settings" component={Settings}></Route>
+		</Route>
+	</Router>,
+app);
